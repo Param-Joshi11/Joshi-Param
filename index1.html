@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Pass Prediction</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            background: #eef5ff;
+            padding: 50px;
+        }
+
+        .box {
+            background: white;
+            width: 400px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 10px gray;
+        }
+
+        input {
+            padding: 10px;
+            margin: 10px;
+            width: 200px;
+        }
+
+        button {
+            padding: 12px 25px;
+            background: blue;
+            color: white;
+            border: none;
+            border-radius: 8px;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 22px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+
+    <h1>🎓 Student Pass Predictor</h1>
+
+    <p>Enter student details</p>
+
+    <input type="number" id="hours" placeholder="Study Hours">
+    <br>
+
+    <input type="number" id="attendance" placeholder="Attendance %">
+    <br>
+
+    <button onclick="predict()">Predict</button>
+
+    <div id="result"></div>
+
+</div>
+
+<script>
+
+function predict() {
+
+    let hours = Number(document.getElementById("hours").value);
+    let attendance = Number(document.getElementById("attendance").value);
+
+    if (hours >= 3 && attendance >= 75) {
+        document.getElementById("result").innerHTML =
+            "✅ Prediction: PASS";
+    }
+    else {
+        document.getElementById("result").innerHTML =
+            "❌ Prediction: FAIL";
+    }
+}
+
+</script>
+
+</body>
+</html>
